@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --ion-color-primary: #ffffff; /* color modo claro */
+  --ion-color-light: #ffffff;   /* color modo oscuro */
+   --ion-color-danger: #910a0a;
+}
+
+
+body {
+    font-family: 'open sans', sans-serif;
+    margin: 0; /* Elimina el margen exterior del cuerpo de la página */
+    padding: 0; /* Asegura que no haya padding interno tampoco */
+}
+
+
+
+
+
+body.activo .footer{
+   background-color: #530505;
+}
+
+.tituloHome{
+  font-size: 1rem;
+  color: #910a0a;
+  text-decoration: underline;
+  font-weight: 900;
+}
+
+.estiloTitulos{
+    font-size: 3.2rem;
+    color: #910a0a;
+    text-decoration: underline;
+    display: inline-block;          /* Necesario para ajustar ancho */
+    font-weight: 900;
+}
+
+.titulo{
+    text-align: center;
+}

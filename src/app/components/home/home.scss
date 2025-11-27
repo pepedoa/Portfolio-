@@ -1,0 +1,246 @@
+
+.home{
+    font-family: 'open sans', sans-serif;
+    min-height: 60vh; /* Se asegura de que la sección ocupe toda la pantalla visible */
+    max-width: 99%; 
+    padding-top:109px;
+  
+    
+     @media (min-width: 768px) {
+     max-width: 100%;
+     padding-top:101px;
+    
+     }
+   
+}
+
+:host-context(body.inactivo) .intro {
+      background-color: #6d060664;
+}
+
+
+.intro{
+
+    font-size: 2rem;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.5;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr; /* solo una columna */
+    grid-template-rows: auto;   /* cada elemento toma su altura */
+    justify-items: center;
+    align-items: center;
+    padding: 0 0.5rem;
+
+
+    
+    h1{
+        font-size: 2.2rem;
+        color: #910a0a;
+        text-decoration: underline;
+        text-align: center ;
+        
+    }
+
+    p{
+        font-size: 1.5rem;
+        color:#666;
+         text-align: center;
+         padding: 1rem;
+        
+    }
+
+    ion-icon {
+        margin: 3rem 0rem;
+        align-items: center;
+    }
+
+
+
+     @media (min-width: 768px) {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #666;
+        line-height: 1.5;
+        padding: 4rem 3rem 4rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        gap: 1rem;
+
+   
+
+           h1{
+            font-size: 3.2rem;
+            color: #910a0a;
+            text-decoration: underline;
+            margin-top: -8rem;
+            text-align: left;
+            }
+
+            p{
+                font-size: 1.5rem;
+                margin-top: -1rem;
+                color:white;
+                text-align: left;
+            }
+     }
+
+    
+}
+
+.botones{
+    display: block;       /* hace que <a> se comporte como bloque */
+    width: max-content;   /* ancho del contenido */
+    margin: 0 auto;       /* centra horizontalmente */
+    padding: 10px 20px;
+    background-color: #910a0a;
+    text-decoration: none;
+    color: white;
+    padding: 0.4rem 1.5rem;
+    border-radius: 11px; 
+    
+    
+    
+}
+
+@media (min-width: 768px) {
+
+    .botones{
+        display: inline-block;       /* hace que <a> se comporte como bloque */
+        padding: 10px 20px;
+        background-color: #910a0a;
+        text-decoration: none;
+        color: white;
+        padding: 0.4rem 1.5rem;
+        border-radius: 11px; 
+   }
+}
+
+
+.botones:hover{
+    background-color: #6d0606;
+    transition: background-color 0.3s ease;
+}
+
+ion-icon {
+  
+  font-size: 70px; 
+  opacity: 1;
+}
+
+.foto {
+  position: relative;
+  width: 350px; /* Ajusta el tamaño */
+  height: 350px;
+  border-radius: 50%;
+  padding: 2px; /* Espacio para el borde */
+  overflow: hidden; /* Oculta el gradiente fuera del círculo */
+
+  @media (min-width: 768px) {
+    position: relative;
+    width: 450px; /* Ajusta el tamaño */
+    height: 450px;
+    border-radius: 50%;
+    padding: 2px; /* Espacio para el borde */
+    overflow: hidden; /* Oculta el gradiente fuera del círculo */
+  }
+}
+
+/* El pseudo-elemento crea el borde */
+.foto::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #910A0A,  #6a0505, #380303,  #150000);
+  background-size: 400% 400%; /* Permite que el gradiente sea grande y animable */
+  border-radius: 50%;
+  animation: animarGradienteBorde 3s ease infinite; /* Aplica la animación */
+  z-index: -1; /* para que el efecto se ponga detrás de la imagen */
+}
+
+
+
+
+.perfil{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    margin: 0.8rem;
+    border: 5px solid  #910a0a00 ; ;
+    display: block;
+
+    @media (min-width: 768px) {
+       width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      margin: 1.1rem;
+     border: 5px solid  #910a0a00 ; ;
+     display: block;
+    }
+}
+
+/* Define la animación para el gradiente 
+como se ira poniendo el fondo en cada fase */
+@keyframes animarGradienteBorde {
+  0% {
+    background-position: 0% 50%;//inicio
+  }
+  50% {
+    background-position: 100% 50%;//mitad
+  }
+  100% {
+    background-position: 0% 50%;//fin
+  }
+}
+.redes-sociales{
+    font-size: 20px; /* Tamaño visual del icono */
+   
+}
+
+.redes-sociales ion-icon:hover{
+    color: #910a0a;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+    transform: scale(2.1); 
+    
+}
+
+.redes-sociales ion-icon:last-child{
+   margin-left: 3rem;
+
+  
+}
+
+/*modo oscuro*/
+
+:host-context(body.activo) .intro {
+  position: relative; /* necesario para el pseudo-elemento */
+}
+
+:host-context(body.activo) .intro::before {//para que esto este antes del resto de contenido de intro
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; left:0; right:0; bottom:0 para ocupar todo el espacio del intro */
+  background-color: rgba(78, 77, 77, 0.589); /* tu fondo gris */
+  z-index: -1; /* siempre detrás de todo */
+  pointer-events: none; /* permite que los botones reciban hover */
+}
+
+
+:host-context(body.activo) .home .intro h1{
+   
+  color: 910a0a;
+
+}
+
+:host-context(body.activo) .home .intro p{
+   
+  color: white;
+
+}

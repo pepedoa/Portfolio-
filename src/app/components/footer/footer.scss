@@ -1,0 +1,42 @@
+.footer{
+    background-color: #910a0a;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    padding:2rem;
+    position: relative;
+    max-width: 99%;       /* ocupa toda la anchura de la ventana */
+  
+    box-sizing: border-box;
+    margin-top: -0.5rem;
+    margin-right: -1rem;
+    font-family: 'Roboto Mono', monospace; /* aplicar la fuente al contenedor */
+    font-weight: bold;
+
+      @media (min-width: 768px) {
+        background-color: #910a0a;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        padding:2rem;
+        position: relative;
+        max-width: 100%;      /* ocupa toda la anchura de la ventana */
+        box-sizing: border-box;
+        margin-top: -0.5rem;
+        margin-right: -1rem;
+        font-family: 'Roboto Mono', monospace; /* aplicar la fuente al contenedor */
+        font-weight: bold;
+      }
+    
+}
+
+
+.redes
+{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  
+}

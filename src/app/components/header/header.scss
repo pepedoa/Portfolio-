@@ -1,0 +1,387 @@
+.menu {
+  position: fixed;     /* Se queda arriba y no se mueve */
+  top: 0;
+  left: 0;
+  z-index: 1000;//para que el menu se ponga por encima de todo y quede flotante
+  width: 100%;  
+  max-width: 99%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto 10fr;
+  align-items: center; /* Centra verticalmente el logo y el menú */
+  padding: 0;
+  background-color: #F8F8F8;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  color: white;
+ 
+  box-sizing: border-box;
+
+  
+  font-family: 'Roboto Mono', monospace; /* aplicar la fuente al contenedor */
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: #910a0a 10px solid;
+
+  @media (min-width: 768px) {
+    position: fixed;     /* Se queda arriba y no se mueve */
+    top: 0;
+    left: 0;
+    z-index: 1000;//para que el menu se ponga por encima de todo y quede flotante
+    width: 100%;       
+    margin: 0;         
+    max-width: 100%;   
+
+    margin-top: -0.5rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto 10fr auto;//creo 3 columnasla de el medio tiene tamaño las otras se adaptan
+    align-self: center;
+    align-items: center; /* Centra verticalmente el logo y el menú */
+    justify-content: center;
+    background-color: #F8F8F8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;      /* ocupa toda la anchura de la ventana */
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace; /* aplicar la fuente al contenedor */
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: #910a0a 10px solid;
+  }
+
+}
+
+
+.logo {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    grid-column: 1; /* asegurar que el logo quede en la columna izquierda */
+    justify-self: start;
+    align-self: center;
+    
+}
+
+
+
+  /* Menú de hamburguesa */
+.mobile-menu {
+  grid-column: 2;
+  display: block;
+  width: max-content;
+  justify-self: center;  /* centra horizontalmente en la celda */
+  align-self: center;    /* centra verticalmente en la celda */
+  background-color: #910a0a;
+  border: none;
+  border-radius: 10px;
+  margin-right: 4rem;
+ 
+  
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+ 
+
+  img {
+    width: 2rem;
+    cursor: pointer;
+  }
+}
+
+
+
+
+/* Menú móvil: oculto por defecto, visible con clase .mostrar */
+.secciones {
+  display: flex; /* cambiar de none a flex para que la transición funcione */
+  flex-direction: column;
+  width: 99%;
+  text-align: center;
+  align-self: center; /* fuerza la alineación vertical en el centro */
+  padding: 1rem ;
+  gap: 2rem;
+  margin: -1rem -3rem;
+   /* Esto hace que en móvil esté en una nueva fila debajo del header */
+  grid-column: 2;
+  grid-row: 2; /* forzar que esté debajo del logo y botón */
+
+  /* Transición suave en móvil */
+  max-height: 0;//
+  opacity: 0; // Ocultar contenido
+  overflow: hidden; // Ocultar contenido desbordante
+  transition: max-height 0.3s ease, opacity 0.3s ease;// transición suave al ocultar
+  
+  
+
+
+  @media (min-width: 768px) {
+    visibility: visible;
+    display: flex; /* usar flex en fila en desktop */
+    flex-direction: row;
+    position: static; /* dentro del flujo normal */
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background-color: transparent;
+    gap: 1rem;
+    margin-left: 3rem; /* separación en desktop */
+    grid-column: 2; /* asegurar que el menú quede en la columna central */
+    grid-row: 1; /* asegurar que el menú quede en la misma fila que el logo */
+   
+    /* En desktop sin transición */
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    transition: none;
+
+
+     &:last-of-type {// eliminar margen derecho en el último enlace
+        margin-right: 0;
+      }
+  }
+}
+
+//esta muestra el menu desplegable
+.mostrar {
+    display: flex;
+    visibility: visible;
+    max-height: 275px; // aumenta tañaño menu para que se vea
+    height: 275px;
+    opacity: 1; // Mostrar contenido
+    transition: max-height 0.7s ease, opacity 0.7s ease;// transición suave al mostrar
+}
+
+.secciones a{// estilos comunes para todos los enlaces
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #443e3e;
+  transition: color 0.3s, border-bottom 0.3s; /* Transición suave */
+  border-bottom: 2px solid transparent; /* Línea transparente por defecto */
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1;
+  
+
+  &.activo,
+  &:hover {
+    color: #910a0a;
+  }
+
+
+  /* Estilo especial para el último enlace */
+  &:last-child {
+    display: inline-block; /* para que el borde solo rodee el contenido */
+    margin-left: auto; /* centrar si es necesario */
+    margin-right: auto;
+    border: 2px solid #910a0a;
+    padding: 0.8rem 1rem; /* espacio uniforme a ambos lados */
+    border-radius: 8px;
+    text-decoration: none;
+    
+    
+
+    &:hover {
+      color: white;
+      background-color: #910a0a;
+      
+    }
+
+    @media (min-width: 768px) {
+      margin-left: 5rem; /* separación en desktop */
+      margin-right: 1rem;
+    }
+  }
+}
+
+.secciones a:not(:last-child)::after {// línea animada debajo del texto
+
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;// altura de la línea
+      left: 0;//
+      bottom: -3px;// posición justo debajo del texto
+      background: #910a0a;
+      transform: scaleX(0);// línea oculta inicialmente
+      transition: transform 0.3s ease-out;
+      transform-origin: bottom left; 
+   
+}
+
+.secciones a::last-child {
+    position: absolute;
+      width: 100%;
+      height: 2px;// altura de la línea
+      left: 0;//
+      bottom: -3px;// posición justo debajo del texto
+      background: #910a0a;
+      transform: scaleX(0);// línea oculta inicialmente
+      transition: transform 0.3s ease-out;
+      transform-origin: bottom left; 
+}
+
+
+
+.secciones a:hover::after {// línea animada debajo del texto al pasar el ratón
+ /* MOSTRAR: Restaura la línea a su tamaño normal (100% del texto). */
+    transform: scaleX(1);
+ 
+    
+}
+
+
+
+
+/* Botón de tema claro/oscuro modo claro */
+.dark-mode {
+   position: fixed;   /* relativo a la ventana, no al menú */
+    top: 0.5rem;       /* desde la parte superior de la pantalla */
+    right: 1rem;       /* desde la derecha de la pantalla */
+    width: 50px;
+    height: 25px;
+    z-index: 1001;     
+    border: 2px solid #910a0a;
+    border-radius: 999px;
+    background-color: #dfdede;
+    width: 50px;
+    height: 25px;
+   
+   
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    grid-column: 3;
+    justify-self: end;     /* lo lleva al borde derecho del grid */
+    align-self: start;     /* lo sube hacia arriba dentro del header */
+    margin-top: 0.5rem;    /* separa un poquito del borde superior */
+    margin-right: 1rem;    /* separa del borde derecho */     /* lo alinea al borde derecho */
+    border: 2px solid #910a0a;
+    border-radius: 999px;
+    background-color: #dfdede;
+    width: 50px;
+    height: 25px;
+    position:relative;
+
+  }
+
+ 
+  
+}
+
+.dark-mode .circle{
+  border: 1px solid #910a0a;
+  width: 40%;
+  height: 80%;
+  border-radius: 50%;
+  margin-top: 0.1rem;
+  display: flex;
+  justify-content: center;//centra horizontalmente
+  align-items: center;//centra verticalmente
+  flex-direction: column;
+  background-color: white;
+  transform: translateX(10%);
+  position:absolute;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.dark-mode .circle img {
+  width: 90%;
+  height: 90%;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+
+
+  
+}
+
+.dark-mode .circle .sun {
+    opacity: 1; 
+    transform: translateY(0);
+    
+}
+
+.dark-mode .circle .moon{
+ opacity: 0;
+  transform: translateY(-120%);
+}
+
+/*botones claro oscuro en modo oscuro*/
+
+:host-context(body.activo) .dark-mode .circle {
+   opacity: 1;
+   transform: translateX(120%);
+   background-color: black;
+}
+
+/* Oculta el Sol en modo oscuro */
+:host-context(body.activo) .dark-mode .circle .sun {
+  opacity: 0;
+  transform: translateY(-120%);
+}
+
+/* Muestra la Luna en modo oscuro y la baja al centro */
+:host-context(body.activo) .dark-mode .circle .moon {
+  opacity: 1;
+  transform: translateY(0); /* <--- CORREGIDO: Usa translateY(0) para la posición final */
+  color: white;
+}
+
+
+
+
+/* Ajuste para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .dark-mode {
+    grid-column: 3; 
+    grid-column: 2 / -1; /* ocupar todas las columnas */
+    grid-row: 3; /* forzar que esté debajo del logo y botón */
+
+    justify-self: center; /* centrar el botón */
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+  }
+}
+
+/*Ajustes modo oscuro*/
+:host-context(body.activo) .menu {
+  background-color: rgb(50, 48, 48);
+}
+
+:host-context(body.activo) .menu .secciones a {
+color: white;
+
+}
+
+:host-context(body.activo) .menu .secciones a:not(:last-child):hover {
+color: #FF4C4C ;
+
+}
+
+:host-context(body.activo) .menu .secciones .btn-cv {
+
+  background-color: #910a0a;
+
+ 
+}
+
+:host-context(body.activo) .menu .secciones a.btn-cv:hover {
+
+    background-color: #984848 ;
+    
+
+}
+
+
+:host-context(body.activo) .menu .secciones a:not(:last-child)::after {// línea animada debajo del texto
+
+      background: #FF4C4C;
+     
+   
+}
+

@@ -1,0 +1,26 @@
+<section class="home">
+  <div class="intro">
+    <div class="info">
+        <h1 class="tituloHome">José Doménech Alemany</h1>
+        <p>Desarrollador web y Administrador de sistemas informáticos.</p>
+        <a class="botones" href="#projects">Proyectos</a>
+    </div>
+
+    
+      <div class="foto">
+        <img class="perfil"src="/assets/profile.jpg" alt="Foto de José Doménech Alemany">
+      </div>
+    
+
+    <div class="redes-sociales">
+      <a href="https://www.linkedin.com/in/pepe-domenech-b07394218/"  class="social-item">
+        <ion-icon [icon]="linkedinIcon" [color]="isHoveredlink ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredlink = true"(mouseleave)="isHoveredlink = false"></ion-icon>
+      </a>
+      <ion-icon [icon]="githubIcon" [color]="isHoveredgit ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredgit = true" (mouseleave)="isHoveredgit = false"></ion-icon>
+    </div>
+    
+    
+    
+  </div>
+
+</section>

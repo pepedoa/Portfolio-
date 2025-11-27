@@ -1,0 +1,41 @@
+<header class="menu">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+  
+ 
+        <a class="logo" href="#home">
+            <img class="logo" src="/assets/logo.png" loading="lazy" alt="Logo">
+          </a>
+
+
+                  
+      <!-- botón menú móvil: al hacer click llama al método del componente -->
+      <button class="mobile-menu" type="button" aria-label="Abrir menú" (click)="navegacionResponsive()">
+              <img src="/assets/barras.svg" alt="Icono Menu Responsive">
+      </button>
+
+    <!-- secciones: ahora su visibilidad depende de la propiedad isMenuOpen -->
+      <nav class="secciones" [class.mostrar]="isMenuOpen"><!--cuando en la funcion navegacionResponsive el isMenuOpen pasa a true añade la clase mostrar-->
+          <a href="#about">Sobre mí</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#contact">Contacto</a>
+              <!--boton descargar CV-->
+          <a 
+            href="assets/CV/Curriculum_José_Doménech_Alemany.pdf" 
+            download="CV_Jose_Domenech_Alemany.pdf" 
+            class="btn-cv"
+          >
+            Descargar CV
+          </a>
+      </nav>
+
+      <!-- botón tema claro/oscuro -->  
+      <div class="dark-mode">
+        <div class="circle" (click)="toggleDarkMode()">
+          <img class="sun" src="/assets/sunny.svg" loading="lazy" alt="sol">
+          <img class="moon" src="/assets/moon.svg" loading="lazy" alt="luna">
+        </div>
+      </div>
+  
+  
+</header>
