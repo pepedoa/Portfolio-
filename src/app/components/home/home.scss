@@ -6,7 +6,7 @@
     padding-top:109px;
   
     
-     @media (min-width: 768px) {
+     @media (min-width: 1024px) {
      max-width: 100%;
      padding-top:101px;
     
@@ -58,7 +58,7 @@
 
 
 
-     @media (min-width: 768px) {
+     @media (min-width: 1024px) {
         font-size: 2rem;
         font-weight: 400;
         color: #666;
@@ -106,7 +106,7 @@
     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
     .botones{
         display: inline-block;       /* hace que <a> se comporte como bloque */
@@ -139,7 +139,7 @@ ion-icon {
   padding: 2px; /* Espacio para el borde */
   overflow: hidden; /* Oculta el gradiente fuera del círculo */
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: relative;
     width: 450px; /* Ajusta el tamaño */
     height: 450px;
@@ -175,7 +175,7 @@ ion-icon {
     border: 5px solid  #910a0a00 ; ;
     display: block;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
        width: 90%;
       height: 90%;
       border-radius: 50%;

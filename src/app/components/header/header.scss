@@ -22,7 +22,7 @@
   font-weight: bold;
   border-bottom: #910a0a 10px solid;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     position: fixed;     /* Se queda arriba y no se mueve */
     top: 0;
     left: 0;
@@ -77,7 +77,7 @@
  
   
   cursor: pointer;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 
@@ -115,7 +115,7 @@
   
 
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     visibility: visible;
     display: flex; /* usar flex en fila en desktop */
     flex-direction: row;
@@ -189,7 +189,7 @@
       
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       margin-left: 5rem; /* separación en desktop */
       margin-right: 1rem;
     }
@@ -251,7 +251,7 @@
    
    
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     margin: 0 auto;
     grid-column: 3;
     justify-self: end;     /* lo lleva al borde derecho del grid */
@@ -336,7 +336,7 @@
 
 
 /* Ajuste para pantallas pequeñas (móvil) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dark-mode {
     grid-column: 3; 
     grid-column: 2 / -1; /* ocupar todas las columnas */

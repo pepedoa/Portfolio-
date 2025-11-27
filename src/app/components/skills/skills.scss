@@ -7,7 +7,7 @@
         }
      
 
-     @media (min-width: 768px) { 
+     @media (min-width: 1024px) { 
         min-height: 100vh; /* Se asegura de que la sección ocupe toda la pantalla visible */
         max-width: 100%; /* Opcional, pero útil */
         text-align: center;
@@ -59,7 +59,7 @@
     justify-content: center;
     padding: 3rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* flexible y responsive */
         gap: 2rem;
