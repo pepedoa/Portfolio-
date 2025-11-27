@@ -5,7 +5,7 @@
      margin-top: 1rem;
      padding-bottom: 3rem;
 
-     @media (min-width: 768px) { 
+     @media (min-width: 1024px) { 
         min-height: 100%; /* Se asegura de que la sección ocupe toda la pantalla visible */
         max-width: 100%; /* Opcional, pero útil */
         background-color: #6d060613;
@@ -34,7 +34,7 @@
     display: grid;
     grid-template-columns:1fr;
     margin-top:-4rem;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         display: grid;
         grid-template-columns:1fr 2fr;
           margin-top: -5rem;
