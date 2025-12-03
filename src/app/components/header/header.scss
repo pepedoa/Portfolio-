@@ -94,7 +94,7 @@
 
 /* Menú móvil: oculto por defecto, visible con clase .mostrar */
 .secciones {
-  display: flex; /* cambiar de none a flex para que la transición funcione */
+  display: flex; 
   flex-direction: column;
   width: 99%;
   text-align: center;
@@ -237,8 +237,8 @@
 
 /* Botón de tema claro/oscuro modo claro */
 .dark-mode {
-   position: fixed;   /* relativo a la ventana, no al menú */
-    top: 0.5rem;       /* desde la parte superior de la pantalla */
+    position: fixed;   /* relativo a la ventana, no al menú */
+    margin-top: -6rem;
     right: 1rem;       /* desde la derecha de la pantalla */
     width: 50px;
     height: 25px;
@@ -255,8 +255,8 @@
     margin: 0 auto;
     grid-column: 3;
     justify-self: end;     /* lo lleva al borde derecho del grid */
-    align-self: start;     /* lo sube hacia arriba dentro del header */
-    margin-top: 0.5rem;    /* separa un poquito del borde superior */
+    
+    margin-top: 0.2rem;    /* separa un poquito del borde superior */
     margin-right: 1rem;    /* separa del borde derecho */     /* lo alinea al borde derecho */
     border: 2px solid #910a0a;
     border-radius: 999px;

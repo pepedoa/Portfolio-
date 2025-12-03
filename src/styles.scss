@@ -17,6 +17,10 @@ body {
 }
 
 
+* {
+    box-sizing: border-box;
+}
+
 
 
 
@@ -27,7 +31,6 @@ body.activo .footer{
 .tituloHome{
   font-size: 1rem;
   color: #910a0a;
-  text-decoration: underline;
   font-weight: 900;
 }
 

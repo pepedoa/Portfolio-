@@ -20,10 +20,10 @@
 
 
 .intro{
-
+    margin-top: -9rem;
     font-size: 2rem;
     font-weight: 400;
-    color: #666;
+    color: white;
     line-height: 1.5;
     gap: 1rem;
     display: grid;
@@ -31,21 +31,21 @@
     grid-template-rows: auto;   /* cada elemento toma su altura */
     justify-items: center;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0 0.5rem 3rem ;
 
 
     
     h1{
         font-size: 2.2rem;
         color: #910a0a;
-        text-decoration: underline;
+  
         text-align: center ;
         
     }
 
     p{
         font-size: 1.5rem;
-        color:#666;
+        color:white;
          text-align: center;
          padding: 1rem;
         
@@ -59,6 +59,7 @@
 
 
      @media (min-width: 1024px) {
+      margin-top: -3rem;
         font-size: 2rem;
         font-weight: 400;
         color: #666;
@@ -75,7 +76,7 @@
            h1{
             font-size: 3.2rem;
             color: #910a0a;
-            text-decoration: underline;
+         
             margin-top: -8rem;
             text-align: left;
             }
@@ -89,6 +90,10 @@
      }
 
     
+}
+
+.info{
+  margin-top:10rem;
 }
 
 .botones{
@@ -125,11 +130,6 @@
     transition: background-color 0.3s ease;
 }
 
-ion-icon {
-  
-  font-size: 70px; 
-  opacity: 1;
-}
 
 .foto {
   position: relative;
@@ -176,12 +176,12 @@ ion-icon {
     display: block;
 
     @media (min-width: 1024px) {
-       width: 90%;
+      width: 90%;
       height: 90%;
       border-radius: 50%;
       margin: 1.1rem;
-     border: 5px solid  #910a0a00 ; ;
-     display: block;
+      border: 5px solid  #910a0a00 ; ;
+      display: block;
     }
 }
 
@@ -198,8 +198,26 @@ como se ira poniendo el fondo en cada fase */
     background-position: 0% 50%;//fin
   }
 }
+
+
+ion-icon {
+  
+  font-size: 70px; 
+  opacity: 1;
+}
+
 .redes-sociales{
     font-size: 20px; /* Tamaño visual del icono */
+    display: grid;
+    grid-template-columns: auto auto; 
+    margin: 0 6rem 0 8rem;
+
+    @media (min-width: 1024px) {
+      font-size: 20px; /* Tamaño visual del icono */
+      display: grid;
+      grid-template-columns: auto auto; 
+      margin: 0 13rem 0 -1rem;
+    }
    
 }
 
@@ -212,9 +230,13 @@ como se ira poniendo el fondo en cada fase */
 }
 
 .redes-sociales ion-icon:last-child{
-   margin-left: 3rem;
+   margin-left: 1rem;
 
   
+}
+
+.descripcion p{
+  text-align: justify
 }
 
 /*modo oscuro*/

@@ -4,24 +4,29 @@
         <h1 class="tituloHome">José Doménech Alemany</h1>
         <p>Desarrollador web y Administrador de sistemas informáticos.</p>
         <a class="botones" href="#projects">Proyectos</a>
+     
+        <div class="redes-sociales">
+          <a href="https://www.linkedin.com/in/pepe-domenech-b07394218/"  class="social-item" target="_blank">
+            <ion-icon [icon]="linkedinIcon" [color]="isHoveredlink ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredlink = true"(mouseleave)="isHoveredlink = false"></ion-icon>
+          </a>
+          <a href="https://github.com/pepedoa/Portfolio-"  class="social-item" target="_blank">
+            <ion-icon [icon]="githubIcon" [color]="isHoveredgit ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredgit = true" (mouseleave)="isHoveredgit = false"></ion-icon>
+          </a>
+        </div>
     </div>
 
     
-      <div class="foto">
+    <div class="foto">
         <img class="perfil"src="assets/profile.jpg" alt="Foto de José Doménech Alemany">
-      </div>
-    
-
-    <div class="redes-sociales">
-      <a href="https://www.linkedin.com/in/pepe-domenech-b07394218/"  class="social-item" target="_blank">
-        <ion-icon [icon]="linkedinIcon" [color]="isHoveredlink ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredlink = true"(mouseleave)="isHoveredlink = false"></ion-icon>
-      </a>
-      <a href="https://github.com/pepedoa/Portfolio-"  class="social-item" target="_blank">
-        <ion-icon [icon]="githubIcon" [color]="isHoveredgit ? 'danger' : (isDark ? 'light' : 'primary')" (mouseenter)="isHoveredgit = true" (mouseleave)="isHoveredgit = false"></ion-icon>
-      </a>
     </div>
     
-    
+
+    <div class="descripcion">
+      <p>Soy graduado en DAW y ASIR, con muchas ganas de aprender y mejorar en desarrollo web y administración de sistemas. 
+        Me interesa participar en proyectos donde pueda crecer, experimentar y aplicar lo que he estudiado.</p>
+    </div>
+
+  
     
   </div>
 
