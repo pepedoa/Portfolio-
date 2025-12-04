@@ -96,13 +96,12 @@
 .secciones {
   display: flex; 
   flex-direction: column;
-  width: 99%;
+  width: 100%;
   text-align: center;
   align-self: center; /* fuerza la alineación vertical en el centro */
   padding: 1rem ;
   gap: 2rem;
-  margin: -1rem -3rem;
-   /* Esto hace que en móvil esté en una nueva fila debajo del header */
+  margin: -1rem -2rem;
   grid-column: 2;
   grid-row: 2; /* forzar que esté debajo del logo y botón */
 
@@ -143,13 +142,15 @@
 }
 
 //esta muestra el menu desplegable
+ @media (max-width: 1024px) {
 .mostrar {
     display: flex;
     visibility: visible;
-    max-height: 275px; // aumenta tañaño menu para que se vea
-    height: 275px;
+    max-height: 350px; // aumenta tañaño menu para que se vea
+    height: 310px;
     opacity: 1; // Mostrar contenido
     transition: max-height 0.7s ease, opacity 0.7s ease;// transición suave al mostrar
+}
 }
 
 .secciones a{// estilos comunes para todos los enlaces
@@ -238,16 +239,17 @@
 /* Botón de tema claro/oscuro modo claro */
 .dark-mode {
     position: fixed;   /* relativo a la ventana, no al menú */
-    margin-top: -6rem;
+    top: 2rem;
     right: 1rem;       /* desde la derecha de la pantalla */
     width: 50px;
     height: 25px;
-    z-index: 1001;     
+    z-index: 5000;     
     border: 2px solid #910a0a;
     border-radius: 999px;
     background-color: #dfdede;
     width: 50px;
     height: 25px;
+     grid-column: 2;
    
    
 
@@ -256,7 +258,7 @@
     grid-column: 3;
     justify-self: end;     /* lo lleva al borde derecho del grid */
     
-    margin-top: 0.2rem;    /* separa un poquito del borde superior */
+    top: 0.2rem;    /* separa un poquito del borde superior */
     margin-right: 1rem;    /* separa del borde derecho */     /* lo alinea al borde derecho */
     border: 2px solid #910a0a;
     border-radius: 999px;
@@ -271,6 +273,7 @@
   
 }
 
+
 .dark-mode .circle{
   border: 1px solid #910a0a;
   width: 40%;
@@ -282,7 +285,7 @@
   align-items: center;//centra verticalmente
   flex-direction: column;
   background-color: white;
-  transform: translateX(10%);
+  transform: translateX(11%);//posicion boton modo claro
   position:absolute;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
@@ -300,22 +303,24 @@
   
 }
 
+//muestra el sol
 .dark-mode .circle .sun {
     opacity: 1; 
     transform: translateY(0);
     
 }
 
+//oculta la luna
 .dark-mode .circle .moon{
  opacity: 0;
   transform: translateY(-120%);
 }
 
 /*botones claro oscuro en modo oscuro*/
-
+//posicion boton modo oscuro
 :host-context(body.activo) .dark-mode .circle {
    opacity: 1;
-   transform: translateX(120%);
+   transform: translateX(135%);
    background-color: black;
 }
 
@@ -333,20 +338,6 @@
 }
 
 
-
-
-/* Ajuste para pantallas pequeñas (móvil) */
-@media (max-width: 1024px) {
-  .dark-mode {
-    grid-column: 3; 
-    grid-column: 2 / -1; /* ocupar todas las columnas */
-    grid-row: 3; /* forzar que esté debajo del logo y botón */
-
-    justify-self: center; /* centrar el botón */
-    margin-right: 0.8rem;
-    font-size: 1.1rem;
-  }
-}
 
 /*Ajustes modo oscuro*/
 :host-context(body.activo) .menu {

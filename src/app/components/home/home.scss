@@ -36,7 +36,7 @@
 
     
     h1{
-        font-size: 2.2rem;
+        font-size: 2.8rem;
         color: #910a0a;
   
         text-align: center ;
@@ -47,7 +47,7 @@
         font-size: 1.5rem;
         color:white;
          text-align: center;
-         padding: 3rem;
+         padding: 1rem;
         
     }
 
@@ -86,7 +86,7 @@
                 margin-top: -1rem;
                 color:white;
                 text-align: left;
-                padding: 1rem;
+                padding: 1rem 1rem 1rem 0.1rem;
             }
      }
 
@@ -209,15 +209,18 @@ ion-icon {
 
 .redes-sociales{
     font-size: 20px; /* Tamaño visual del icono */
-    display: grid;
-    grid-template-columns: auto auto; 
-    margin: 0 6rem 0 8rem;
+    display: flex;      /* Ponemos los iconos en fila */
+    flex-direction: row;
+    gap: 1.5rem;        /* Distancia fija entre iconos */
+    justify-content: center;
 
     @media (min-width: 1024px) {
-      font-size: 20px; /* Tamaño visual del icono */
-      display: grid;
-      grid-template-columns: auto auto; 
-      margin: 0 13rem 0 -1rem;
+     font-size: 20px; /* Tamaño visual del icono */
+     display: flex;      /* Ponemos los iconos en fila */
+     flex-direction: row;
+     justify-content: left;
+     gap: 1.5rem;        /* Distancia fija entre iconos */
+
     }
    
 }
@@ -237,7 +240,9 @@ ion-icon {
 }
 
 .descripcion p{
-  text-align: justify
+  text-align: justify;
+  padding-left: 2rem;
+  
 }
 
 /*modo oscuro*/
