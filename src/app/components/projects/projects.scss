@@ -3,12 +3,13 @@
      max-width: 100%; 
      background-color: #6d060613;
      margin-top: 1rem;
-     padding-bottom: 3rem;
+     padding: 1rem;
 
      @media (min-width: 1024px) { 
         min-height: 100vh; /* Se asegura de que la sección ocupe toda la pantalla visible */
         max-width: 100%; /* Opcional, pero útil */
         background-color: #6d060613;
+        padding: 1rem;
        
      }
  
@@ -26,11 +27,12 @@
     gap: 20px;
     width: 100%;
     justify-items: center;
+    
   
 }
 
 .proyecto:hover{
-  transform: scale(1.1);
+  transform: scale(1.05);
   z-index: 10; /* Asegura que el elemento esté por encima de otros */
 }
 
@@ -38,71 +40,113 @@
     transition: transform 0.5s ease;
     border: 4px solid #910a0a;
     text-align: center;
-    width: 90%;
-    height: 100%;
+    width: 100%;              /* dejar que ocupe todo el ancho del grid cell */
+    box-sizing: border-box;   /* importante para padding y border */
     max-width: 350px; 
-   min-height: 150px; 
+    min-width: 0;             /* permite que los hijos se encojan en flex/ grid */
+    height: 100%;
+    min-height: 150px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     background-color: #ead2d2;
     padding-bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;   /* orden vertical: imagen, contenido, botones */
+    align-items: stretch;     /* que los botones se ajusten al ancho disponible */
+    overflow: hidden;
 }
 
-
-
-.imgProyecto{
-    width: 100%;
-    height:45%;   /* mantiene la proporción original */
-    display: block; /* elimina el pequeño espacio debajo de la imagen */
-    border-radius: 10px;
-}
-
+.imgProyecto,
 .imgProyectoProx{
     width: 100%;
-    height:100%;   /* mantiene la proporción original */
-    display: block; /* elimina el pequeño espacio debajo de la imagen */
+    height: auto;             /* que la imagen no fuerce overflow */
+    max-height: 220px;        /* límite razonable en móvil/desktop */
+    display: block;
     border-radius: 10px;
+    object-fit: cover;        /* recorta sin deformar */
 }
 
-
-
+/* Tecnologías: usar auto-fit para que quepan y se ajusten */
 .tecnologias{
-  display:  grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 1px;
-
-
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tecnologias p{
     padding: 6px;
     margin: 0 4px;
-   text-align: center;
+    text-align: center;
     border:2px solid #910a0a;
     color: #910a0a;
-   
-   border-radius: 5px;
+    border-radius: 5px;
+    min-width: 0;             /* evita que el texto obligue al desbordamiento */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+    font-size: 0.7rem;
 }
 
 .enlaces {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .enlace {
-    padding: 0.8rem 1.2rem;
+    padding: 0.6rem 1rem;
     background-color: #910a0a;
     color: white;
     text-decoration: none;
     border-radius: 10px;
-    width: fit-content;
+    box-sizing: border-box;
+    text-align: center;
+    min-width: 0;            /* permite que se reduzca en contenedor flex */
+    white-space: normal;     /* permitir saltos de línea */
+    overflow-wrap: break-word;
+    flex: 0 1 auto;          /* puede encogerse si hace falta */
 }
 
-.enlace:hover{
-    background-color: #6d0606;
-    transition: background-color 0.3s ease;
+/* Comportamiento en pantallas pequeñas: apilar botones y ajustar gaps */
+@media (max-width: 767px) {
+  .proyectos {
+    gap: 12px;
+    padding: 0 1rem;
+  }
+
+  .proyecto {
+    max-width: 100%;
+  }
+
+  .imgProyecto,
+  .imgProyectoProx {
+    max-height: 180px;
+  }
+
+  .tecnologias {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  /* que los botones no ocupen todo el ancho al apilarse */
+  .enlaces {
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .enlace {
+    flex: 0 1 auto;        /* puede encogerse, NO ocupa 100% */
+    width: auto;           /* ancho automático según contenido */
+    min-width: 120px;      /* evita que queden demasiado estrechos */
+    box-sizing: border-box; /*tamaño predecible porque cuenta con el paddin y margin si le opongo*/
+    padding: 0.6rem 1rem;
+  }
 }
 
