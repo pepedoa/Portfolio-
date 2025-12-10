@@ -46,8 +46,10 @@
     p{
         font-size: 1.5rem;
         color:white;
-         text-align: center;
-         padding: 1rem;
+        text-align: center;
+        padding: 1rem;
+        margin-right: 1rem;
+
         
     }
 
@@ -135,15 +137,15 @@
 .foto {
   position: relative;
   width: 350px; /* Ajusta el tamaño */
-  height: 350px;
+  height: 365px;
   border-radius: 50%;
   padding: 2px; /* Espacio para el borde */
   overflow: hidden; /* Oculta el gradiente fuera del círculo */
-
+ 
   @media (min-width: 1024px) {
     position: relative;
     width: 450px; /* Ajusta el tamaño */
-    height: 450px;
+    height: 470px;
     border-radius: 50%;
     padding: 2px; /* Espacio para el borde */
     overflow: hidden; /* Oculta el gradiente fuera del círculo */

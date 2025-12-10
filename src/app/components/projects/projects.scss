@@ -99,6 +99,11 @@
     align-items: center;
 }
 
+.enlace:hover{
+    background-color: #6d0606;
+    transition: background-color 0.3s ease;
+}
+
 .enlace {
     padding: 0.6rem 1rem;
     background-color: #910a0a;
