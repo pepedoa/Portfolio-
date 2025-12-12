@@ -59,6 +59,10 @@
     justify-self: start;
     align-self: center;
     
+     @media (min-width: 1024px) {
+      padding-top: 0.3rem;
+      width: 97px;
+     } 
 }
 
 

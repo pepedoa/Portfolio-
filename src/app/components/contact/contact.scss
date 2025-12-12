@@ -147,7 +147,7 @@
 input:focus,
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(145, 10, 10, 0.4);
+    box-shadow: 0 0 0 3px #626861;
 }
 
 :host-context(body.activo) input:focus,
