@@ -1,13 +1,16 @@
 import { Component,AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class Contact implements AfterViewInit{
-
+  enviadoExitoso: boolean = false;
+  enviadoFallido: boolean = false;
+  
   ngAfterViewInit() {//se ejecuta despues de  que se haya  cargado;
     const MAX_LENGTH = 300;
     const textarea = document.getElementById('mensaje');
@@ -42,6 +45,8 @@ export class Contact implements AfterViewInit{
     message: (form.querySelector('#mensaje') as HTMLTextAreaElement).value
   };
 
+ 
+
   fetch(this.endpoint, {
     method: 'POST',
     headers: {
@@ -55,11 +60,11 @@ export class Contact implements AfterViewInit{
     if (response.ok) {
       console.log('¡Éxito!');
       form.reset(); 
-      alert('Mensaje enviado correctamente');
+      this.enviadoExitoso = true;
     } else {
       const errorData = await response.json();
       console.error('Error de Formspree:', errorData);
-      alert('Hubo un error al enviar el formulario.');
+      this.enviadoFallido = true;
     }
   })
   .catch(error => {
