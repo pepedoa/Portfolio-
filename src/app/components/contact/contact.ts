@@ -71,7 +71,7 @@ export class Contact implements AfterViewInit{
           this.enviadoExitoso = false;
           this.cerrandoAlerta = false;
         }, 500); // duración de slideOut
-      }, 5000); // visible 5 segundos
+      }, 4000); // visible 5 segundos
 
     } else {
       const errorData = await response.json();
@@ -87,7 +87,7 @@ export class Contact implements AfterViewInit{
           this.enviadoFallido = false;
           this.cerrandoAlerta = false;
         }, 500); // duración de slideOut
-      }, 5000); // visible 5 segundos
+      }, 4000); // visible 5 segundos
     }
   })
   .catch(error => {
