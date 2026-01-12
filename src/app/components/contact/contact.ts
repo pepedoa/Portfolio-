@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Contact implements AfterViewInit{
   enviadoExitoso: boolean = false;
   enviadoFallido: boolean = false;
+  cerrandoAlerta: boolean = false;
   
   ngAfterViewInit() {//se ejecuta despues de  que se haya  cargado;
     const MAX_LENGTH = 300;
@@ -61,10 +62,33 @@ export class Contact implements AfterViewInit{
       console.log('¡Éxito!');
       form.reset(); 
       this.enviadoExitoso = true;
+
+      // Tiempo visible antes de cerrar
+      setTimeout(() => {
+        this.cerrandoAlerta = true; // activa animación de salida
+
+        // Esperar a que termine la animación
+        setTimeout(() => {
+          this.enviadoExitoso = false;
+          this.cerrandoAlerta = false;
+        }, 500); // duración de slideOut
+      }, 5000); // visible 5 segundos
+
     } else {
       const errorData = await response.json();
       console.error('Error de Formspree:', errorData);
-      this.enviadoFallido = true;
+        this.enviadoFallido = true;
+
+      // Tiempo visible antes de cerrar
+      setTimeout(() => {
+        this.cerrandoAlerta = true; // activa animación de salida
+
+        // Esperar a que termine la animación
+        setTimeout(() => {
+          this.enviadoFallido = false;
+          this.cerrandoAlerta = false;
+        }, 500); // duración de slideOut
+      }, 5000); // visible 5 segundos
     }
   })
   .catch(error => {
@@ -72,6 +96,7 @@ export class Contact implements AfterViewInit{
     alert('No se pudo conectar con el servidor.');
   });
 }
+
 
 
 

@@ -50,11 +50,11 @@
                     <button  type="submit">Enviar</button>
                 </div>
             </form>
-            <div *ngIf="enviadoExitoso" class="custom-alerte">
-                <p>¡Mensaje enviado con éxito! 🚀</p>
+            <div *ngIf="enviadoExitoso" class="custom-alerte" [class.saliendo]="cerrandoAlerta">
+                <p>¡Mensaje enviado con éxito! 📩</p>
                 <button class="botonAlertaExito" (click)="enviadoExitoso = false">Cerrar</button>
             </div>
-            <div *ngIf="enviadoFallido" class="custom-alertf">
+            <div *ngIf="enviadoFallido" class="custom-alertf" [class.saliendo]="cerrandoAlerta">
                 <p>¡Error al enviar el mensaje! 🚨</p>
                 <button (click)="enviadoFallido = false">Cerrar</button>
             </div>
