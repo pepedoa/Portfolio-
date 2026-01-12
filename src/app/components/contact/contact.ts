@@ -59,8 +59,7 @@ export class Contact implements AfterViewInit{
   .then(async response => {
     // Usamos async/await dentro del then para que sea más fácil de leer
     if (response.ok) {
-      console.log('¡Éxito!');
-      form.reset(); 
+      form.reset();
       this.enviadoExitoso = true;
 
       // Tiempo visible antes de cerrar
@@ -96,8 +95,6 @@ export class Contact implements AfterViewInit{
     alert('No se pudo conectar con el servidor.');
   });
 }
-
-
 
 
 
