@@ -1,5 +1,6 @@
 import { Component,AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { enviroment } from '../../../enviroment/enviroment';
 
 @Component({
   selector: 'app-contact',
@@ -33,7 +34,7 @@ export class Contact implements AfterViewInit{
   }
 
 
-  private endpoint = 'https://formspree.io/f/xojjqjpz'; // Pon tu ID real aquí
+  private endpoint = enviroment.formSpreeUrl;
 
   enviarFormulario(event: Event) {
   event.preventDefault(); // Evita el envío por defecto del formulario
