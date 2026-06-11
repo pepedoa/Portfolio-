@@ -110,14 +110,5 @@ Los artefactos compilados se almacenarán en la carpeta `dist/`.
 
 ---
 
-## 📨 Contacto e Información Profesional
 
-Si deseas ponerte en contacto conmigo o conocer más sobre mi trayectoria, puedes hacerlo a través de los siguientes canales:
-
-*   👤 **Nombre:** José Doménech Alemany
-*   📍 **Ubicación:** Pego, Alicante (España)
-*   📧 **Correo electrónico:** [pepepego96@gmail.com](mailto:pepepego96@gmail.com)
-*   📱 **Teléfono / WhatsApp:** [+34 682 799 670](tel:+34682799670)
-*   💼 **LinkedIn:** [José Doménech Alemany](https://www.linkedin.com/in/pepe-domenech-b07394218/)
-*   📄 **Currículum Vitae:** Disponible directamente en la ruta de recursos del proyecto: [`src/assets/CV/Curriculum_José_Doménech_Alemany.pdf`](file:///c:/Users/pepep/Documents/portfolio/src/assets/CV/Curriculum_José_Doménech_Alemany.pdf) (o descárgalo desde la web).
 
